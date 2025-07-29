@@ -1,4 +1,4 @@
-def change_def(change_add,change_reduce,change_move):
+def change_def(S,j):
     change_add = [
     [8],#0
     [7],#1
@@ -38,32 +38,35 @@ def change_def(change_add,change_reduce,change_move):
     [0,6]#9
     ]
 
-    if change_move[i] != None:
-        for v in change_move:
-            S_copy = S
-            S_copy[j] = v
+    result = []
+    original_digit = int(S[j])
+    for v in change_move[original_digit]:
+            S_copy = S.copy()
+            S_copy[j] = str(v)
+            result.append("".join(S_copy))
             print(S_copy)
-    elif change_add[i] != None:
+    
+    return result
+    """elif change_add[i] != None:
         for v in change_reduce:
             if v != None:
                 S_copy = S
                 S_copy[j] = v
-                print(S_copy)     
+                print(S_copy)    """ 
     
     
 S = list(input())
-S = int(S)
 
+all_changes = []
 
-for i in range(10):#0~9まで
-    change_S = []
-    S_copy = S
-    for j in range(len(str(S))):
-        if S[j] == i:
+for j in range(len(S)):
+    digit = int(len(S))
+        
+    changes = change_def(digit,j,S)
+    all_changes.extend(changes)
             
-            
+print(all_changes)
 # 数字それぞれに変わりうる数字を設定する
 # その設定は「取り除くだけで完成する数字」「ほかの数字と協力しないと完成しない数字」が存在する
 # 最初にchange_moveに存在している変更できる数字を変えて出力していく
 # 次にaddとreduceの中からマッチ棒を交換し合える組み合わせを探しそれによって変更された数字を出力する
-# #
