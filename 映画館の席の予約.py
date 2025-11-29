@@ -32,7 +32,7 @@ for i, seat in enumerate(all):
 #print(min_Abs)
 
 for i, seat in enumerate(all):
-    if Abs_seat[i] < min_Abs and seat not in res:
+    if Abs_seat[i] == min_Abs and seat not in res:
         print(f"{seat[0]}",f"{seat[1]}")
 """for i in range(len(all)):
     flag = True

@@ -23,3 +23,19 @@ for k in range(K):
     cards = [i for row in shuffle_cards for i in row]
 for i in cards:
     print(i)
+    
+"""N, M, K = map(int, input().split())
+
+# カードを初期化（1〜N）
+cards = list(range(1, N + 1))
+
+# K回シャッフルを繰り返す
+for _ in range(K):
+    # M枚ずつ分割
+    groups = [cards[i:i + M] for i in range(0, N, M)]
+    # 分割したグループを逆順に積み直す
+    cards = [num for group in reversed(groups) for num in group]
+
+# 結果を出力
+print(*cards, sep="\n")
+"""

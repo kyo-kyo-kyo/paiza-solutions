@@ -3,7 +3,7 @@ angry_boys = []
 for _ in range(M):
     angry_boys.append(int(input()))
 
-print(N,M,K,angry_boys)
+#print(N,M,K,angry_boys)
 sweets = 0
 wow = 0
 for i in range(1,N+1):
